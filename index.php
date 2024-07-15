@@ -56,7 +56,7 @@
         <!-- Portada -->
         <section id="portada" class="hero-section">
             <div style="margin-bottom:540px;" class="hero-content">
-                <h1>REUS DE TOTA LA VIDA</h1>
+                <h1>REUS DE TOTA LA VIDAaa</h1>
                 <a class="plantilla-btn" style="text-decoration:none;" href="plantilla.php">PLANTILLA</a>
                 <p class="years">Desde 2022</p>
                 <a alt="Hacer click aquí" href="https://maps.app.goo.gl/fYCR9h6G5bLijNRu5"><i class="fas fa-map-marker-alt"></i> Camp de futbol Les Borges </a>
