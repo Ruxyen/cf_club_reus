@@ -9,7 +9,6 @@
     <link rel="icon" href="images/cfreus.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 
 <body>
@@ -34,7 +33,6 @@
                 <a href="index.php"><img src="images/cfreus.png" alt="Escudo del Club" class="club-logo"></a>
             </div>
             <div class="nav-right">
-                <a href="index.php">Inicio</a>
                 <div class="dropdown">
                     <a href="#">Equipo</a>
                     <div class="dropdown-content">
@@ -47,6 +45,7 @@
                 <a href="#noticias">Noticias</a>
                 <a href="#historia">Club</a>
                 <a href="#campo">Campo</a>
+                <a href="#campo">Galería</a>
                 <a href="#contacto">Contacto</a>
             </div>
         </div>
@@ -55,13 +54,12 @@
     <main>
         <!-- Portada -->
         <section id="portada" class="hero-section">
-            <div style="margin-bottom:540px;" class="hero-content">
-                <h1>REUS DE TOTA LA VIDAaa</h1>
-                <a class="plantilla-btn" style="text-decoration:none;" href="plantilla.php">PLANTILLA</a>
-                <p class="years">Desde 2022</p>
-                <a alt="Hacer click aquí" href="https://maps.app.goo.gl/fYCR9h6G5bLijNRu5"><i class="fas fa-map-marker-alt"></i> Camp de futbol Les Borges </a>
-            </div><br><br>
-            <p style="position:relative; top:-55px;" class="lema">Oportunidad de dar un salto internacional a Arabia</p>
+            <h1>REUS DE TOTA LA VIDA</h1>
+            <p class="years">Desde 2022</p>
+            <a alt="Hacer click aquí" href="https://maps.app.goo.gl/fYCR9h6G5bLijNRu5"><i class="fas fa-map-marker-alt"></i> Camp de futbol Les Borges</a>   
+            <a class="plantilla-btn" style="text-decoration:none;" href="plantilla.php">Plantilla</a>
+            <p class="lema">Oportunidad de dar un salto internacional a Arabia</p>
+            <a class="plantilla-btn" style="text-decoration:none;" href="plantilla.php">Saber más</a>
         </section>
 
         <!-- Sección de mapa y ubicación -->
