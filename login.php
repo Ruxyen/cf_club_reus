@@ -4,8 +4,6 @@ session_start(); // Inicia una nueva sesión o reanuda una existente.
 
 require_once 'conectar_bd.php'; // Incluye el archivo para conectar a la base de datos.
 
-//include("forms/register.php"); //  Incluye el archivo de registro.
-
 
 
 //LOGIN ADMIN
@@ -66,7 +64,6 @@ if (isset($_POST['submit'])) { // Verifica si se ha enviado el formulario.
 
 
 ?>
-
 
 
 <!DOCTYPE html>
