@@ -8,6 +8,7 @@
     <meta name="author" content="Devcrud">
     <title>CF REUS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<<<<<<< HEAD
 
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
@@ -221,6 +222,8 @@
       
 
     </style>
+=======
+>>>>>>> 12a428bd5864b200294f3f3ee16c9c6c076a95bc
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -253,6 +256,7 @@
                                 alt="English Flag"> ENG
                         </a>
                     </div>
+<<<<<<< HEAD
                 </li>
                 <li style="margin-left:170px;" class="nav-item">
                     <a class="nav-link" href="https://www.instagram.com" target="_blank"><i
@@ -350,6 +354,54 @@
                             vitae. Cum, nostrum, quidem.</p>
                     </div>
                 </div>
+=======
+                </div>
+                
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                
+            </div>
+            <div class="nav-center">
+                <a href="index.php"><img src="images/cfreus.png" alt="Escudo del Club" class="club-logo"></a>
+            </div>
+            <div class="nav-right">
+                <div class="dropdown">
+                    <a href="#">Equipo</a>
+                    <div class="dropdown-content">
+                        <a href="plantilla.php">Plantilla</a>
+                        <a href="calendario.php">Calendario</a>
+                        <a href="#clasificacion">Clasificación</a>
+                        <a href="#equipacion">Equipación</a>
+                    </div>
+                </div>
+                <a href="#noticias">Noticias</a>
+                <a href="#historia">Club</a>
+                <a href="#campo">Campo</a>
+                <a href="#campo">Galería</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Portada -->
+        <section id="portada" class="hero-section">
+            <h1>REUS DE TOTA LA VIDA</h1>
+            <p class="years">Desde 2022</p>
+            <a alt="Hacer click aquí" href="https://maps.app.goo.gl/fYCR9h6G5bLijNRu5"><i class="fas fa-map-marker-alt"></i> Camp de futbol Les Borges</a>   
+            <a class="plantilla-btn" style="text-decoration:none;" href="plantilla.php">Plantilla</a>
+            <p class="lema">Oportunidad de dar un salto internacional a Arabia</p>
+            <a class="plantilla-btn" style="text-decoration:none;" href="plantilla.php">Saber más</a>
+        </section>
+
+        <!-- Sección de mapa y ubicación -->
+        <section class="mapa-ubicacion-section">
+            <div style="margin-top:75px;" class="ubicacion-texto">
+                <h1>Dónde nos encontramos</h1><br><br>
+                <p style="text-align:center">Nuestro campo de fútbol está ubicado en el corazón de Reus, en el Camp de futbol Les Borges. <br><br>Ven y disfruta de nuestros partidos en un ambiente familiar y apasionado.</p>
+>>>>>>> 12a428bd5864b200294f3f3ee16c9c6c076a95bc
             </div>
         </div>
     </div>
