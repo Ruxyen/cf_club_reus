@@ -8,6 +8,12 @@
     <link rel="icon" href="images/cfreus.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/vendors/animate/animate.css">
+    <link rel="stylesheet" href="assets/css/foodhut.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap">
+
     <style>
         body {
             font-family: Arial, sans-serif;

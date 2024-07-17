@@ -7,22 +7,18 @@
     <meta name="description" content="Start your development with FoodHut landing page.">
     <meta name="author" content="Devcrud">
     <title>CF REUS</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<<<<<<< HEAD
-
-    <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-
     <link rel="stylesheet" href="assets/vendors/animate/animate.css">
-
-    <!-- Bootstrap + FoodHut main styles -->
     <link rel="stylesheet" href="assets/css/foodhut.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap">
 
     <style>
-        *{
+       * {
             font-family: 'Roboto Condensed', sans-serif;
         }
+
         .flag-icon {
             width: 20px;
             height: 15px;
@@ -36,14 +32,10 @@
             text-align: center;
             overflow: hidden;
             height: 55px;
-            /* Aproximadamente dos dedos */
             line-height: 50px;
-            /* Centra el texto verticalmente */
             font-size: 1.8em;
-            /* Tamaño del texto */
             position: relative;
             letter-spacing: 5px;
-            /* Espaciado entre letras */
         }
 
         .marquee {
@@ -64,166 +56,174 @@
         }
 
         .header h1 {
-            background: linear-gradient(to right, #ff3333, #000); /* Degradado rojo a negro */
-            -webkit-background-clip: text; /* Clip degradado al texto */
-            color: transparent; /* Hace el texto transparente para mostrar el degradado */
-            animation: color-change 5s infinite alternate; /* Animación para cambiar colores */
+            background: linear-gradient(to right, #ff3333, #000);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: color-change 5s infinite alternate;
             font-weight: bold;
-            font-size:75px; top:-275px; position:relative;
-     
+            font-size: 75px;
+            top: -275px;
+            position: relative;
         }
+
         .header h2 {
-         
             margin: 10px 0;
-            color: #fffb00; /* Color amarillo */
+            color: #fffb00;
             font-weight: bold;
             font-style: italic;
-            font-size:30px; top:-290px; position:relative;
+            font-size: 30px;
+            top: -290px;
+            position: relative;
         }
+
         .header #plantilla {
-           
-            border: 2px solid #fff; /* Borde blanco */
+            border: 2px solid #fff;
             color: #ffffff;
             text-decoration: none;
-            transition: background-color 0.3s, color 0.3s; /* Transición suave */
-            border-radius: 10px; /* Bordes redondeados */
-            padding:5px;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 10px;
+            padding: 5px;
             font-weight: bold;
             background-color: rgb(184, 14, 14);
-            font-size: 30px; top: -55px; position: relative;
+            font-size: 30px;
+            top: -55px;
+            position: relative;
         }
+
         .header #plantilla:hover {
-            background-color: #fff; /* Fondo blanco al pasar el ratón */
-            color: #333; /* Texto oscuro al pasar el ratón */
+            background-color: #fff;
+            color: #333;
             background-color: rgb(255, 217, 0);
         }
 
         @keyframes color-change {
             0% {
-                color: #ff3333; /* Empieza en rojo */
+                color: #ff3333;
             }
+
             50% {
-                color: #000; /* Cambia a negro a la mitad */
+                color: #000;
             }
+
             100% {
-                color: #ff3333; /* Vuelve a rojo al final */
+                color: #ff3333;
             }
         }
- 
 
-.navbar-nav .nav-link {
-    position: relative;
-    color: black;
-    text-decoration: none;
-    display: inline-block;
-    padding-bottom: 5px;
-    margin-right: 20px;
-    transition: color 0.3s;
-    box-shadow:black 3px 3px 3px;
-    border-radius:5px;
-    color:black;
-    background-color: black;
-}
+        .navbar-nav .nav-link {
+            position: relative;
+            color: black;
+            text-decoration: none;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-right: 20px;
+            transition: color 0.3s, background-color 0.3s;
+            border-radius: 5px;
+            background-color: transparent;
+        }
 
-.navbar-nav .nav-link,
-.dropdown-menu .dropdown-item {
-    font-size: 20px; /* Puedes ajustar este valor según necesites */
-    
-}
+        .navbar-nav .nav-link,
+        .dropdown-menu .dropdown-item {
+            font-size: 20px;
+           
+        }
 
-/* Pseudo-elemento ::before para la línea */
-.navbar-nav .nav-link::before,
-.navbar-nav .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: transparent;
-    transition: width 0.3s ease-out, background-color 0.3s ease-out;
-}
+        .navbar-nav .nav-link::before,
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: transparent;
+            transition: width 0.3s ease-out, background-color 0.3s ease-out;
+        }
 
-/* Pseudo-elemento ::before para la línea roja */
-.navbar-nav .nav-link::before {
-    left: 0;
-}
+        .navbar-nav .nav-link::before {
+            left: 0;
+        }
 
-/* Pseudo-elemento ::after para la línea negra */
-.navbar-nav .nav-link::after {
-    right: 0;
-}
+        .navbar-nav .nav-link::after {
+            right: 0;
+        }
 
-/* Hover effect para el enlace */
-.navbar-nav .nav-link:hover::before,
-.navbar-nav .nav-link:hover::after {
-    width: 100%;
-    background-color: #ff3333;
-   
-}
+        .navbar-nav .nav-link:hover::before,
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+            background-color: #ff3333;
+     
+        }
 
-/* Estilo para los enlaces del menú desplegable */
-.navbar-nav .dropdown-menu .dropdown-item {
-    position: relative;
-    transition: color 0.3s;
-}
+        .navbar-nav .dropdown-menu .dropdown-item {
+            position: relative;
+            transition: color 0.3s, background-color 0.3s;
+        }
 
-/* Pseudo-elementos ::before y ::after para los enlaces del menú desplegable */
-.navbar-nav .dropdown-menu .dropdown-item::before,
-.navbar-nav .dropdown-menu .dropdown-item::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: transparent;
-    transition: width 0.3s ease-out, background-color 0.3s ease-out;
-}
+        .navbar-nav .dropdown-menu .dropdown-item::before,
+        .navbar-nav .dropdown-menu .dropdown-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: transparent;
+            transition: width 0.3s ease-out, background-color 0.3s ease-out;
+        }
 
-/* Pseudo-elemento ::before para la línea roja en el desplegable */
-.navbar-nav .dropdown-menu .dropdown-item::before {
-    left: 0;
-}
+        .navbar-nav .dropdown-menu .dropdown-item::before {
+            left: 0;
+        }
 
-/* Pseudo-elemento ::after para la línea negra en el desplegable */
-.navbar-nav .dropdown-menu .dropdown-item::after {
-    right: 0;
-}
+        .navbar-nav .dropdown-menu .dropdown-item::after {
+            right: 0;
+        }
 
-/* Hover effect para los enlaces del menú desplegable */
-.navbar-nav .dropdown-menu .dropdown-item:hover::before,
-.navbar-nav .dropdown-menu .dropdown-item:hover::after {
-    width: 100%;
-    background-color: #ff3333;
-}
+        .navbar-nav .dropdown-menu .dropdown-item:hover::before,
+        .navbar-nav .dropdown-menu .dropdown-item:hover::after {
+            width: 100%;
+            background-color: #ff3333;
+        }
 
-/* Otros estilos para los enlaces */
-.navbar-nav .nav-link:hover,
-.navbar-nav .dropdown-menu .dropdown-item:hover {
-    color: #ff3333;
-}
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .dropdown-menu .dropdown-item:hover {
+            color: #ff3333;
+            background-color: #333;
+        }
 
-/* Estilo para el enlace "Equipo" cuando está activo */
-.navbar-nav .nav-item.dropdown.show .nav-link,
-.navbar-nav .nav-item.dropdown:hover .nav-link {
-    color: #fff; /* Color blanco */
-}
+        .navbar-nav .nav-item.dropdown.show .nav-link,
+        .navbar-nav .nav-item.dropdown:hover .nav-link {
+            color: #fff;
+       
+        }
 
-/* Estilo para el enlace "Equipo" en el menú desplegable cuando está activo */
-.navbar-nav .dropdown-menu .dropdown-item.active {
-    color: #fff; /* Color blanco */
-}
+        .navbar-nav .dropdown-menu .dropdown-item.active {
+            color: #fff;
+  
+        }
 
-/* Añade margen top para el dropdown-menu */
-.dropdown-menu {
-    margin-top: 2px; /* Puedes ajustar este valor según necesites */
-}
+        .dropdown-menu {
+            margin-top: 2px;
+        }
+        #contact .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #contact .col-md-6 {
+            margin: 10px 0;
+        }
+
+        #contact .has-height-lg {
+            height: auto;
+        }
 
         
       
 
     </style>
-=======
->>>>>>> 12a428bd5864b200294f3f3ee16c9c6c076a95bc
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -240,8 +240,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                <li  class="nav-item dropdown">
+                    <a style=" text-shadow: black 5px 5px 5px;" class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="https://www.flagcolorcodes.com/data/flag-of-spain.png" class="flag-icon"
                             alt="Spanish Flag"> ES
@@ -256,20 +256,19 @@
                                 alt="English Flag"> ENG
                         </a>
                     </div>
-<<<<<<< HEAD
                 </li>
-                <li style="margin-left:170px;" class="nav-item">
+                <li style="margin-left:170px; text-shadow: black 5px 5px 5px;" class="nav-item">
                     <a class="nav-link" href="https://www.instagram.com" target="_blank"><i
                             class="fab fa-instagram"></i></a>
                 </li>
-                <li class="nav-item">
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
                     <a class="nav-link" href="https://www.twitter.com" target="_blank"><i
                             class="fab fa-twitter"></i></a>
                 </li>
-                <li class="nav-item">
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
                     <a class="nav-link" href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </li>
-                <li class="nav-item">
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
                     <a class="nav-link" href="https://www.facebook.com" target="_blank"><i
                             class="fab fa-facebook"></i></a>
                 </li>
@@ -281,7 +280,7 @@
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="equipoDropdown" role="button"
+                    <a style=" text-shadow: black 5px 5px 5px;" class="nav-link dropdown-toggle" href="#" id="equipoDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Equipo</a>
                     <div class="dropdown-menu" aria-labelledby="equipoDropdown">
                         <a class="dropdown-item" href="plantilla.php">Plantilla</a>
@@ -290,22 +289,22 @@
                         <a class="dropdown-item" href="equipacion.php">Equipación</a>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
                     <a class="nav-link" href="noticias.php">Noticias</a>
                 </li>
-                <li class="nav-item">
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
                     <a class="nav-link" href="historia.php">Club</a>
                 </li>
-                <li class="nav-item">
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
                     <a class="nav-link" href="campo.php">Campo</a>
                 </li>
-                <li class="nav-item">
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
                     <a class="nav-link" href="galeria.php">Galería</a>
                 </li>
-                <li  class="nav-item">
+                <li  style=" text-shadow: black 5px 5px 5px;" class="nav-item">
                     <a class="nav-link" href="contacto.php">Contacto</a>
                 </li>
-                <li class="nav-item">
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
                     <a class="nav-link" href="alineacion.php">
                         <i style="font-size:30px;" alt="alineación" class="fas fa-clipboard-check"></i>
                     </a>
@@ -317,13 +316,13 @@
     <header id="home" class="header">
         <div class="overlay text-white text-center">
             <h1 >REUS DE TOTA LA VIDA</h1>
-            <h2 >Desde 2022</h2>
+            <h2 style=" text-shadow: black 5px 5px 5px;" >Desde 2022</h2>
             <a id="plantilla"  href="plantilla.php">
                 PLANTILLA <i class="fas fa-file-alt"></i>
             </a>
-            <h2 style="font-size:30px; top:150px; position:relative;">Oportunidad de dar un salto internacional a Arabia
+            <h2 style="font-size:30px; top:150px; position:relative; text-shadow: black 5px 5px 5px;">Oportunidad de dar un salto internacional a Arabia
             </h2>
-            <a id="sabermas" style="font-size: 25px; top: 150px; position: relative; color: white; border: 2px solid white; border-radius: 5px; padding: 3px;" href="arabia.php">
+            <a id="sabermas" style="font-size: 25px; top: 150px; position: relative; color: white; border: 2px solid white; border-radius: 5px; padding: 3px; text-shadow: black 5px 5px 5px;" href="arabia.php">
                 Saber más <i class="fas fa-plus"></i>
             </a>
             
@@ -354,64 +353,9 @@
                             vitae. Cum, nostrum, quidem.</p>
                     </div>
                 </div>
-=======
-                </div>
-                
-                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                
-            </div>
-            <div class="nav-center">
-                <a href="index.php"><img src="images/cfreus.png" alt="Escudo del Club" class="club-logo"></a>
-            </div>
-            <div class="nav-right">
-                <div class="dropdown">
-                    <a href="#">Equipo</a>
-                    <div class="dropdown-content">
-                        <a href="plantilla.php">Plantilla</a>
-                        <a href="calendario.php">Calendario</a>
-                        <a href="#clasificacion">Clasificación</a>
-                        <a href="#equipacion">Equipación</a>
-                    </div>
-                </div>
-                <a href="#noticias">Noticias</a>
-                <a href="#historia">Club</a>
-                <a href="#campo">Campo</a>
-                <a href="#campo">Galería</a>
-                <a href="#contacto">Contacto</a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <!-- Portada -->
-        <section id="portada" class="hero-section">
-            <h1>REUS DE TOTA LA VIDA</h1>
-            <p class="years">Desde 2022</p>
-            <a alt="Hacer click aquí" href="https://maps.app.goo.gl/fYCR9h6G5bLijNRu5"><i class="fas fa-map-marker-alt"></i> Camp de futbol Les Borges</a>   
-            <a class="plantilla-btn" style="text-decoration:none;" href="plantilla.php">Plantilla</a>
-            <p class="lema">Oportunidad de dar un salto internacional a Arabia</p>
-            <a class="plantilla-btn" style="text-decoration:none;" href="plantilla.php">Saber más</a>
-        </section>
-
-        <!-- Sección de mapa y ubicación -->
-        <section class="mapa-ubicacion-section">
-            <div style="margin-top:75px;" class="ubicacion-texto">
-                <h1>Dónde nos encontramos</h1><br><br>
-                <p style="text-align:center">Nuestro campo de fútbol está ubicado en el corazón de Reus, en el Camp de futbol Les Borges. <br><br>Ven y disfruta de nuestros partidos en un ambiente familiar y apasionado.</p>
->>>>>>> 12a428bd5864b200294f3f3ee16c9c6c076a95bc
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
 
     <!-- CONTACT Section  -->
     <div id="contact" class="container-fluid bg-dark text-light border-top wow fadeIn">
@@ -430,10 +374,7 @@
                 </div>
             </div>
             <div class="col-md-6 px-0">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6006.095565216915!2d1.0144997!3d41.177125!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a14f6a434a4a6d%3A0xafcc2742f134e0c9!2sCamp%20de%20futbol%20Les%20Borges!5e0!3m2!1sfr!2ses!4v1720693797516!5m2!1sfr!2ses"
-                    width="920" height="500" style="border:2px solid white; margin:10px; border-radius: 15px;"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.0208880570217!2d1.0192953764566592!3d41.17771160897415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a14f6a434a4a6d%3A0xafcc2742f134e0c9!2sCampo%20de%20f%C3%BAtbol%20Les%20Borges!5e0!3m2!1ses!2ses!4v1721211525947!5m2!1ses!2ses" width="920" height="500" style="border:2px solid white; margin:10px; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
