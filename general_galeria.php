@@ -1,4 +1,10 @@
-<!--  gallary Section  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/vendors/animate/animate.css">
+    <link rel="stylesheet" href="assets/css/foodhut.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap">
+
+
 <div id="gallary" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
         <h2 class="section-title">OUR MENU</h2>
     </div>
