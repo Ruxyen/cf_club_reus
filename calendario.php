@@ -1,394 +1,492 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CF Reus</title>
-    <link rel="icon" href="images/cfreus.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with FoodHut landing page.">
+    <meta name="author" content="Devcrud">
+    <title>CF REUS</title>
+
+    <!-- External Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="assets/vendors/animate/animate.css">
     <link rel="stylesheet" href="assets/css/foodhut.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/calendario.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap">
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 100px; /* Adjust if needed to fit under the navbar */
+        }
+        .logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .logos img {
+            width: 80px;
+            height: auto;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 20px;
+        }
+        .location {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .location img {
+            width: 24px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .button img {
+            width: 24px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .button a {
+            text-decoration: none;
+            color: black;
+            background-color: #e0e0e0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button a:hover {
+            background-color: #d0d0d0;
+        }
+        .link a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
         }
 
-        .calendar-section {
-            padding: 20px;
+        /* Styles for carousel and calendar */
+        .carousel-container, .calendar-container {
+            display: none;
             text-align: center;
         }
-
-        .calendar-container {
+        .carousel {
             display: flex;
-            overflow: hidden;
-            position: relative;
             align-items: center;
-            justify-content: center;
-            height: 500px;
+            position: relative;
             width: 100%;
         }
-
-        .calendar-card {
-            flex: 0 0 60%;
-            max-width: 600px;
-            min-width: 400px;
-            margin: 0 20px;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
-            opacity: 0.5;
-            transform: scale(0.8);
+        .carousel-wrapper {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: absolute;
-            z-index: 1;
+            transition: transform 0.5s ease;
+            width: 100%;
         }
-
-        .calendar-card.active {
+        .carousel-item {
+            min-width: 300px;
+            margin: 0 10px;
+            opacity: 0.5;
+            transition: opacity 0.5s ease;
+            width: 500px;
+            margin:0px;
+           
+        }
+        .carousel-item.active {
             opacity: 1;
-            transform: scale(1.2);
-            z-index: 3;
-            filter: none;
         }
-
-        .calendar-card.prev {
-            transform: translateX(-150%) scale(0.9);
-            opacity: 0.5;
-            z-index: 2;
-        }
-
-        .calendar-card.next {
-            transform: translateX(150%) scale(0.9);
-            opacity: 0.5;
-            z-index: 2;
-        }
-
-        .calendar-card img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        .calendar-card .team {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .calendar-card .team span {
-            margin-left: 10px;
-            font-size: 1.2em;
-        }
-
-        .calendar-card .match-info {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 1.5em;
-        }
-
-        .calendar-card .match-details {
-            text-align: center;
-            font-size: 1em;
-        }
-
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+        .carousel-control {
             background: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
             padding: 10px;
             cursor: pointer;
-            z-index: 4;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
         }
-
-        .arrow.left {
-            left: 10px;
+        .prev {
+            left: 0;
         }
-
-        .arrow.right {
-            right: 10px;
+        .next {
+            right: 0;
         }
-
-        .arrow i {
-            font-size: 1.5em;
+        .calendar-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 10px;
+            display: inline-block;
+            width: 500px;
+            box-sizing: border-box;
         }
-
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
+        .calendar-item img {
+            width: 100px;
+            height: auto;
         }
-
-        footer .footer-content {
-            margin: 0 auto;
+        .button-toggle {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
         }
-
-        
+        .button-toggle button {
+            padding: 10px 20px;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button-toggle button:hover {
+            background-color: #d0d0d0;
+        }
     </style>
 </head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
-<body>
-<header>
-        <div class="main-nav">
-            <div class="nav-left">
-                <div style="margin-right:50px;" class="dropdown">
-                    <a href="#" class="language" data-lang="es">ES</a>
-                    <div class="dropdown-content">
-                        <a href="#" class="language" data-lang="cat">CAT</a>
-                        <a href="#" class="language" data-lang="eng">ENG</a>
+    <div class="marquee-container">
+        <div class="marquee">ASCENSO A 3A CATALANA</div>
+    </div>
+
+   <!-- Navbar -->
+   <nav style="margin-top:25px;" class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a style="text-shadow: black 5px 5px 5px;" class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://www.flagcolorcodes.com/data/flag-of-spain.png" class="flag-icon" alt="Spanish Flag"> ES
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="#" data-lang="cat">
+                            <img src="https://www.flagcolorcodes.com/data/Flag-of-Catalonia.png" class="flag-icon" alt="Catalan Flag"> CAT
+                        </a>
+                        <a class="dropdown-item" href="#" data-lang="eng">
+                            <img src="https://www.flagcolorcodes.com/data/Flag-of-Great-Britain.png" class="flag-icon" alt="English Flag"> ENG
+                        </a>
                     </div>
-                </div>
-                
-                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                
-            </div>
-            <div class="nav-center">
-                <a href="index.php"><img src="images/cfreus.png" alt="Escudo del Club" class="club-logo"></a>
-            </div>
-            <div class="nav-right">
-                <a href="index.php">Inicio</a>
-                <div class="dropdown">
-                    <a href="#">Equipo</a>
-                    <div class="dropdown-content">
-                        <a href="plantilla.php">Plantilla</a>
-                        <a href="calendario.php">Calendario</a>
-                        <a href="clasificacion.php">Clasificación</a>
-                        <a href="equipacion.php">Equipación</a>
+                </li>
+                <li style="margin-left:170px; text-shadow: black 5px 5px 5px;" class="nav-item">
+                    <a class="nav-link" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
+                    <a class="nav-link" href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
+                    <a class="nav-link" href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </li>
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                </li>
+
+            </ul>
+            <a class="navbar-brand m-auto" href="index.php">
+                <img style="margin-left:65px;" src="images/cfreus.png" class="brand-img" alt="Escudo del Club">
+                <span class="brand-txt">CALENDARIO</span>
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a style=" text-shadow: black 5px 5px 5px;" class="nav-link dropdown-toggle" href="#" id="equipoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Equipo</a>
+                    <div class="dropdown-menu" aria-labelledby="equipoDropdown">
+                        <a class="dropdown-item" href="plantilla.php">Plantilla</a>
+                        <a class="dropdown-item" href="clasificacion.php">Clasificación</a>
+                        <a class="dropdown-item" href="equipacion.php">Equipación</a>
                     </div>
-                </div>
-                <a href="noticias.php">Noticias</a>
-                <a href="historia.php">Club</a>
-                <a href="campo.php">Campo</a>
-                <a href="contacto.php">Contacto</a>
-            </div>
+                </li>
+
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
+                    <a class="nav-link" href="noticias.php">Noticias</a>
+                </li>
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
+                    <a class="nav-link" href="historia.php">Club</a>
+                </li>
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
+                    <a class="nav-link" href="campo.php">Campo</a>
+                </li>
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
+                    <a class="nav-link" href="galeria.php">Galería</a>
+                </li>
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
+                    <a class="nav-link" href="contacto.php">Contacto</a>
+                </li>
+                <li style=" text-shadow: black 5px 5px 5px;" class="nav-item">
+                    <a class="nav-link" href="alineacion.php">
+                        <i style="font-size:30px;" alt="alineación" class="fas fa-clipboard-check"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <section id="calendario" class="calendar-section">
-            <h2>Calendario de Partidos</h2>
-            <div class="calendar-container" id="calendar-container">
-                <button class="arrow left" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
 
-                <!-- Repetir este bloque para cada partido -->
-                <div class="calendar-card past">
-                    <div class="match-details">
-                        <span class="date">Fecha: 10/01/2024</span>
-                        <span class="time">Hora: 16:00</span>
-                    </div>
-                    <div class="match">
-                        <div class="team team-left">
-                            <img src="images/cfreus.png" alt="Escudo Local">
-                        </div>
-                        <div class="match-info">
-                            <span class="score1">-</span>
-                            <span class="vs">vs</span>
-                            <span class="score2">-</span>
-                        </div>
-                        <div class="team team-right">
-                            <img src="images/cfreus.png" alt="Escudo Visitante">
-                        </div>
+    <div style="margin-top:160px; "class="button-toggle">
+        <button style="margin-right:10px;"onclick="toggleView('carousel')">Ver Carrusel</button>
+        <button onclick="toggleView('calendar')">Ver Calendario</button>
+    </div>
+
+    <!-- Carrusel de eventos -->
+    <div class="carousel-container" id="carousel">
+        <div class="carousel">
+            <button class="carousel-control prev" onclick="carouselControl(-1)">&#10094;</button>
+            <div class="carousel-wrapper">
+            
+                <div class="carousel-item active">
+                <div>23/07/2024</div>
+                <div>18:00</div>
+                    <div class="logos">
+                        <img src="images/cfreus.png" alt="Logo Equipo 2">
+                        <div class="score">0 - 2</div>
+                        <img src="images/cfreus.png" alt="Logo Equipo 1">
                     </div>
                     <div class="location">
-                        <span><i class="fas fa-map-marker-alt"></i> Estadio Local</span>
+                    <span class="ti-location-pin pr-3"></span>
+                        <div>Campo de fútbol Les Borges</div>
+                    </div>
+                    <div class="button">
+                    <i style="font-size:30px; margin-right:10px;" alt="alineación" class="fas fa-clipboard-check"></i>
+                        <a href="#">Alineación</a>
                     </div>
                 </div>
-                <div class="calendar-card past">
-                    <div class="team team-left">
-                        <img src="images/cfreus.png" alt="Escudo Local">
-                        <span>Reus de tota la vida, club de futbol B</span>
+                <div class="carousel-item">
+                    <div class="logos">
+                        <img src="images/cfreus.png" alt="Logo Equipo 1">
+                        <div class="score">2 - 0</div>
+                        <img src="images/cfreus.png" alt="Logo Equipo 2">
                     </div>
-                    <div class="match-info">
-                        <span class="vs">vs</span>
-                        <span class="score">2 - 2</span>
+                    <div class="location">
+                    <span class="ti-location-pin pr-3"></span>
+                        <div>Campo de fútbol Les Borges</div>
                     </div>
-                    <div class="team team-right">
-                        <img src="images/cfreus.png" alt="Escudo Visitante">
-                        <span>Cambrils, U.E.</span>
-                    </div>
-                    <div class="match-details">
-                        <span>Fecha: 17/01/2024</span>
-                        <span>Hora: 18:00</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Estadio Visitante</span>
+                    <div class="button">
+                    <i style="font-size:30px; margin-right:10px;" alt="alineación" class="fas fa-clipboard-check"></i>
+                        <a href="#">Alineación</a>
                     </div>
                 </div>
-                <div class="calendar-card past">
-                    <div class="team team-left">
-                        <img src="images/cfreus.png" alt="Escudo Local">
-                        <span>Reus de tota la vida, club de futbol C</span>
-                    </div>
-                    <div class="match-info">
-                        <span class="vs">vs</span>
-                        <span class="score">0 - 1</span>
-                    </div>
-                    <div class="team team-right">
-                        <img src="images/cfreus.png" alt="Escudo Visitante">
-                        <span>Tarragona, F.C.</span>
-                    </div>
-                    <div class="match-details">
-                        <span>Fecha: 24/01/2024</span>
-                        <span>Hora: 20:00</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Estadio Local</span>
-                    </div>
-                </div>
-                <div class="calendar-card past">
-                    <div class="team team-left">
-                        <img src="images/cfreus.png" alt="Escudo Local">
-                        <span>Reus de tota la vida, club de futbol D</span>
-                    </div>
-                    <div class="match-info">
-                        <span class="vs">vs</span>
-                        <span class="score">1 - 3</span>
-                    </div>
-                    <div class="team team-right">
-                        <img src="images/cfreus.png" alt="Escudo Visitante">
-                        <span>Vilaseca, C.F.</span>
-                    </div>
-                    <div class="match-details">
-                        <span>Fecha: 31/01/2024</span>
-                        <span>Hora: 17:00</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Estadio Visitante</span>
-                    </div>
-                </div>
-                <div class="calendar-card upcoming active">
-                    <div class="team team-left">
-                        <img src="images/cfreus.png" alt="Escudo Local">
-                        <span>Reus de tota la vida, club de futbol E</span>
-                    </div>
-                    <div class="match-info">
-                        <span class="vs">vs</span>
-                    </div>
-                    <div class="team team-right">
-                        <img src="images/cfreus.png" alt="Escudo Visitante">
-                        <span>Sabadell, A.C.</span>
-                    </div>
-                    <div class="match-details">
-                        <span>Fecha: 07/02/2024</span>
-                        <span>Hora: 19:00</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Estadio Local</span>
-                    </div>
-                </div>
-                <div class="calendar-card upcoming">
-                    <div class="team team-left">
-                        <img src="images/cfreus.png" alt="Escudo Local">
-                        <span>Reus de tota la vida, club de futbol F</span>
-                    </div>
-                    <div class="match-info">
-                        <span class="vs">vs</span>
-                    </div>
-                    <div class="team team-right">
-                        <img src="images/cfreus.png" alt="Escudo Visitante">
-                        <span>Lleida, C.F.</span>
-                    </div>
-                    <div class="match-details">
-                        <span>Fecha: 14/02/2024</span>
-                        <span>Hora: 18:30</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Estadio Visitante</span>
-                    </div>
-                </div>
-                <div class="calendar-card upcoming">
-                    <div class="team team-left">
-                        <img src="images/cfreus.png" alt="Escudo Local">
-                        <span>Reus de tota la vida, club de futbol G</span>
-                    </div>
-                    <div class="match-info">
-                        <span class="vs">vs</span>
-                    </div>
-                    <div class="team team-right">
-                        <img src="images/cfreus.png" alt="Escudo Visitante">
-                        <span>Girona, F.C.</span>
-                    </div>
-                    <div class="match-details">
-                        <span>Fecha: 21/02/2024</span>
-                        <span>Hora: 20:00</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Estadio Local</span>
-                    </div>
-                </div>
-                <div class="calendar-card upcoming">
-                    <div class="team team-left">
-                        <img src="images/cfreus.png" alt="Escudo Local">
-                        <span>Reus de tota la vida, club de futbol H</span>
-                    </div>
-                    <div class="match-info">
-                        <span class="vs">vs</span>
-                    </div>
-                    <div class="team team-right">
-                        <img src="images/cfreus.png" alt="Escudo Visitante">
-                        <span>Hospitalet, U.E.</span>
-                    </div>
-                    <div class="match-details">
-                        <span>Fecha: 28/02/2024</span>
-                        <span>Hora: 17:30</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Estadio Visitante</span>
-                    </div>
-                </div>
-                <!-- Repetir hasta aquí -->
-
-                <button class="arrow right" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                <!-- Agregar más elementos del carrusel aquí -->
             </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2024. CF Reus. Todos los derechos reservados.</p>
+            <button class="carousel-control next" onclick="carouselControl(1)">&#10095;</button>
         </div>
-    </footer>
+    </div>
+
+    <!-- Calendario de eventos -->
+    <div class="calendar-container" id="calendar">
+        <div class="calendar-item">
+            <div class="logos">
+                <img src="images/cfreus.png" alt="Logo Equipo 2">
+                <div class="score">0 - 2</div>
+                <img src="images/cfreus.png" alt="Logo Equipo 1">
+            </div>
+            <div class="location">
+            <span class="ti-location-pin pr-3"></span>
+                <div>Campo de fútbol Les Borges</div>
+            </div>
+            <div class="button">
+            <i style="font-size:30px; margin-right:10px;" alt="alineación" class="fas fa-clipboard-check"></i>
+                <a href="#">Alineación</a>
+            </div>
+        </div>
+        <div class="calendar-item">
+            <div class="logos">
+                <img src="images/cfreus.png" alt="Logo Equipo 1">
+                <div class="score">2 - 0</div>
+                <img src="images/cfreus.png" alt="Logo Equipo 2">
+            </div>
+            <div class="location">
+            <span class="ti-location-pin pr-3"></span>
+                <div>Campo de fútbol Les Borges</div>
+            </div>
+            <div class="button">
+            <i style="font-size:30px; margin-right:10px;" alt="alineación" class="fas fa-clipboard-check"></i>
+                <a href="#">Alineación</a>
+            </div>
+        </div>
+        <div class="calendar-item">
+            <div class="logos">
+                <img src="images/cfreus.png" alt="Logo Equipo 1">
+                <div class="score">2 - 0</div>
+                <img src="images/cfreus.png" alt="Logo Equipo 2">
+            </div>
+            <div class="location">
+            <span class="ti-location-pin pr-3"></span>
+                <div>Campo de fútbol Les Borges</div>
+            </div>
+            <div class="button">
+            <i style="font-size:30px; margin-right:10px;" alt="alineación" class="fas fa-clipboard-check"></i>
+                <a href="#">Alineación</a>
+            </div>
+        </div>
+        <div class="calendar-item">
+            <div class="logos">
+                <img src="images/cfreus.png" alt="Logo Equipo 1">
+                <div class="score">2 - 0</div>
+                <img src="images/cfreus.png" alt="Logo Equipo 2">
+            </div>
+            <div class="location">
+            <span class="ti-location-pin pr-3"></span>
+                <div>Campo de fútbol Les Borges</div>
+            </div>
+            <div class="button">
+            <i style="font-size:30px; margin-right:10px;" alt="alineación" class="fas fa-clipboard-check"></i>
+                <a href="#">Alineación</a>
+            </div>
+        </div>
+        <div class="calendar-item">
+            <div class="logos">
+                <img src="images/cfreus.png" alt="Logo Equipo 1">
+                <div class="score">2 - 0</div>
+                <img src="images/cfreus.png" alt="Logo Equipo 2">
+            </div>
+            <div class="location">
+            <span class="ti-location-pin pr-3"></span>
+                <div>Campo de fútbol Les Borges</div>
+            </div>
+            <div class="button">
+            <i style="font-size:30px; margin-right:10px;" alt="alineación" class="fas fa-clipboard-check"></i>
+                <a href="#">Alineación</a>
+            </div>
+        </div>
+        <div class="calendar-item">
+            <div class="logos">
+                <img src="images/cfreus.png" alt="Logo Equipo 1">
+                <div class="score">2 - 0</div>
+                <img src="images/cfreus.png" alt="Logo Equipo 2">
+            </div>
+            <div class="location">
+            <span class="ti-location-pin pr-3"></span>
+                <div>Campo de fútbol Les Borges</div>
+            </div>
+            <div class="button">
+            <i style="font-size:30px; margin-right:10px;" alt="alineación" class="fas fa-clipboard-check"></i>
+                <a href="#">Alineación</a>
+            </div>
+        </div>
+       
+    </div>
+
+    <!-- Footer -->
+
+    <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+        <div class="row">
+            <div class="col-sm-2">
+                <h4>Porteros</h4>
+                <ul class="list-unstyled">
+                    <li><a href="portero1.php" class="text-light">Portero 1</a></li>
+                    <li><a href="portero2.php" class="text-light">Portero 2</a></li>
+                    <li><a href="portero3.php" class="text-light">Portero 3</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h4>Defensas</h4>
+                <ul class="list-unstyled">
+                    <li><a href="defensa1.php" class="text-light">Defensa 1</a></li>
+                    <li><a href="defensa2.php" class="text-light">Defensa 2</a></li>
+                    <li><a href="defensa3.php" class="text-light">Defensa 3</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h4>Centrocampistas</h4>
+                <ul class="list-unstyled">
+                    <li><a href="centrocampista1.php" class="text-light">Centrocampista 1</a></li>
+                    <li><a href="centrocampista2.php" class="text-light">Centrocampista 2</a></li>
+                    <li><a href="centrocampista3.php" class="text-light">Centrocampista 3</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h4>Delanteros</h4>
+                <ul class="list-unstyled">
+                    <li><a href="delantero1.php" class="text-light">Delantero 1</a></li>
+                    <li><a href="delantero2.php" class="text-light">Delantero 2</a></li>
+                    <li><a href="delantero3.php" class="text-light">Delantero 3</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h4>Staff Técnico</h4>
+                <ul class="list-unstyled">
+                    <li><a href="staff1.php" class="text-light">Staff 1</a></li>
+                    <li><a href="staff2.php" class="text-light">Staff 2</a></li>
+                    <li><a href="staff3.php" class="text-light">Staff 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="bg-dark text-light text-center border-top wow fadeIn">
+        <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>
+                document.write(new Date().getFullYear())
+            </script> By <a href="https://github.com/Ruxyen">Ruxyen</a></p>
+    </div>
 
     <script>
-        const calendarContainer = document.getElementById('calendar-container');
-        const calendarCards = calendarContainer.querySelectorAll('.calendar-card');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentIndex = 4; // Inicialmente mostrar el quinto partido en el centro
-
-        function updateCarousel() {
-            calendarCards.forEach((card, index) => {
-                card.classList.remove('active', 'prev', 'next');
-                if (index === currentIndex) {
-                    card.classList.add('active');
-                } else if (index === (currentIndex - 1 + calendarCards.length) % calendarCards.length) {
-                    card.classList.add('prev');
-                } else if (index === (currentIndex + 1) % calendarCards.length) {
-                    card.classList.add('next');
-                }
-            });
+        function toggleView(view) {
+            var carouselContainer = document.getElementById('carousel');
+            var calendarContainer = document.getElementById('calendar');
+            
+            if (view === 'carousel') {
+                carouselContainer.style.display = 'block';
+                calendarContainer.style.display = 'none';
+            } else {
+                carouselContainer.style.display = 'none';
+                calendarContainer.style.display = 'block';
+            }
         }
 
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? calendarCards.length - 1 : currentIndex - 1;
-            updateCarousel();
-        });
+        function carouselControl(direction) {
+            var wrapper = document.querySelector('.carousel-wrapper');
+            var activeItem = document.querySelector('.carousel-item.active');
+            var items = document.querySelectorAll('.carousel-item');
+            var activeIndex = Array.from(items).indexOf(activeItem);
+            
+            activeItem.classList.remove('active');
+            var newIndex = activeIndex + direction;
 
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex === calendarCards.length - 1) ? 0 : currentIndex + 1;
-            updateCarousel();
-        });
+            if (newIndex < 0) {
+                newIndex = items.length - 1;
+            } else if (newIndex >= items.length) {
+                newIndex = 0;
+            }
 
-        updateCarousel(); // Initialize carousel
+            items[newIndex].classList.add('active');
+            var itemWidth = items[newIndex].offsetWidth;
+            var newTransform = -newIndex * (itemWidth + 20); // 20 is the margin between items
+            wrapper.style.transform = 'translateX(' + newTransform + 'px)';
+        }
     </script>
+
+    <!-- Core -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!--  Flexslider -->
+    <script src="assets/vendors/flexslider/jquery.flexslider-min.js"></script>
+
+    <!--  Fancybox -->
+    <script src="assets/vendors/fancybox/jquery.fancybox.min.js"></script>
+
+    <!--  Datetimepicker -->
+    <script src="assets/vendors/datepicker/bootstrap-datepicker.js"></script>
+
+    <!--  OWL -->
+    <script src="assets/vendors/owl/owl.carousel.js"></script>
+
+    <!-- Main -->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
